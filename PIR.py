@@ -1,19 +1,6 @@
-import RPi.GPIO as GPIO		#include the RPi.GPIO module. 
-import time
+from gpiozero import MotionSensor
 
-GPIO.setmode(GPIO.BOARD)	#Use pi board pin numbering
-
-GPIO.setup(7, GPIO.IN)		#Set pin7 as input
-
-
-print("Here we go - CTRL+C to exit")
-try:
-	while 1:
-		if GPIO.input(7):
+pir = MotionSensor(4)
+while  True:
+	if pir.motion_detected:
 			print("motion detected")
-			time.sleep(0.1)
-		else:
-			print("no activity")
-			time.sleep(0.1)
-except KeyboardInterrupt:	#If CTRL+C is pressed, exit cleanly
-	GPIO.cleanup() 				#Garbage collection
