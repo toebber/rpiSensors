@@ -13,11 +13,11 @@ try:
 	while 1:
 		pirRead = GPIO.input(pirPin)		#read input value
 		if pirRead:							#if value is true
-			if pirState = 0:				#we only want notification if the motion has just started
+			if pirState == 0:				#we only want notification if the motion has just started
 				print("motion detected")	
 				pirState = 1				#set variable to note that motions has begun
 		else:
-			if pirState = 1:			#if motion has begun --> 
+			if pirState == 1:			#if motion has begun --> 
 				print("motion ended")		#and we no longe detect motion. Print motion ended
 				pirState = 0
 			#time.sleep(0.1)
