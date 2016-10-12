@@ -4,8 +4,13 @@ GPIO.setmode(GPIO.BOARD)	#Use pi board pin numbering
 
 GPIO.setup(7, GPIO.IN)		#Set pin7 as input
 
-if GPIO.input(7):
-	print("motion detected")
-else:
-	print("no activity")
 
+print("Here we go - CTRL+C to exit")
+try:
+	while 1:
+		if GPIO.input(7):
+			print("motion detected")
+		else:
+			print("no activity")
+except KeyboardInterrupt:	#If CTRL+C is pressed, exit cleanly
+	GPIO.cleanup() 				#Garbage collection
