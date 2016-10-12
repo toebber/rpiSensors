@@ -10,9 +10,9 @@ try:
 	while 1:
 		if GPIO.input(7):
 			print("motion detected")
-			time.sleep(100ms)
+			time.sleep(0.1)
 		else:
 			print("no activity")
-			time.sleep(100ms)
+			time.sleep(0.1)
 except KeyboardInterrupt:	#If CTRL+C is pressed, exit cleanly
 	GPIO.cleanup() 				#Garbage collection
