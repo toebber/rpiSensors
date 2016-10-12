@@ -10,7 +10,7 @@ GPIO.setup(pirPin, GPIO.IN)		#Set pin7 as input
 print("Here we go - CTRL+C to exit")
 try:
 	while 1:
-		if GPIO.input(pirPi):
+		if GPIO.input(pirPin):
 			print("motion detected")
 			time.sleep(0.1)
 		else:
