@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO		#include the RPi.GPIO module. 
+import time
 
 GPIO.setmode(GPIO.BOARD)	#Use pi board pin numbering
 
